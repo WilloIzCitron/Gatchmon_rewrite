@@ -25,6 +25,13 @@ async def say(ctx, arg):
   await ctx.message.delete
   await ctx.send(arg)
 
+@bot.command()
+@commands.cooldown(1, 5, commands.BucketType.user)
+async def ping(ctx, message):
+    embed = discord.Embed(title='Pong!',description="Client latency is " + str(round(client.latency * 1000)) + "ms""\nGatchmon`s Latency is "+str(round(int((datetime.now()-message.created_at).microseconds)/1000))+" ms ".format(message), color=0xf0455a)
+    embed.set_footer(text='by '+str(ctx.author))
+    await ctx.send(embed=embed)
+        
 @bot.event
 async def on_command_error(ctx, error):
   if isinstance(error, commands.CommandOnCooldown):
