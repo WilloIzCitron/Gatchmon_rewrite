@@ -77,7 +77,7 @@ async def search(ctx,arg):
     searches = [ "[YouTube](https://m.youtube.com/results?search_query="+str(keyword), "[Google](https://www.google.com/search?q="+str(keyword), "[Fandom](https://www.fandom.com/?s="+str(keyword), "[Google Image](https://www.google.com/search?tbm=isch&q="+str(keyword), "[Github](https://github.com/search?q="+str(keyword), "[Twitter](https://twitter.com/search?q="+str(keyword), "[Wikihow](https://www.wikihow.com/wikiHowTo?search="+str(keyword)]
     total = ''
     for i in range(0, len(searches)): total += str(i+1) + '. **' + searches[i] + ')**\n'
-	embed = discord.Embed(color=0xf0455a)
+    embed = discord.Embed(color=0xf0455a)
     embed.add_field(name="Searches for "+str(text), value=total)
     await ctx.send(embed=embed)
 
