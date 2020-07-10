@@ -1,7 +1,6 @@
 import discord
 import os
 from os import environ as fetchsecret
-import dotenv
 from discord.ext import commands
 from datetime import datetime
 timestamp = datetime.now()
