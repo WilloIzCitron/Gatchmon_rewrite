@@ -6,7 +6,7 @@ from datetime import datetime
 timestamp = datetime.now()
 
 token = fetchsecret['TOKEN']
-bot = commands.Bot(command_prefix='g!')
+bot = commands.Bot(command_prefix='m!')
 client = discord.Client()
 
 async def is_owner(ctx):
