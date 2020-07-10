@@ -13,4 +13,9 @@ client = discord.Client()
 async def on_ready():
   print('bot online')
   
+@bot.event
+async def on_command_error(ctx, error):
+  if isinstance(error, commands.CommandOnCooldown):
+    await ctx.send('this command under cooldown')
+  
 bot.run(token)
