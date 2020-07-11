@@ -28,43 +28,20 @@ async def say(ctx, arg):
 @bot.command()
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def ping(ctx):
-    embed = discord.Embed(title='Pong!',description="Client latency is "+str(round(client.latency * 1000))+"ms", color=0xf0455a)
+    embed = discord.Embed(title='Pong!', description="Client latency is "+str(round(client.latency * 1000))+"ms", color=0xf0455a)
     embed.set_footer(text='by '+str(ctx.author))
     await ctx.send(embed=embed)
   
 @bot.command()
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def about(ctx):
-    embed = discord.Embed(
-		    title="<a:dj_blob:723714370462416966> Gatchmon Biodata <a:dj_blob:723714370462416966>",
-		    description=(random.choice(['this is fun fact?', 'also try username601', 'what is this?', 'also try Nezumi Yui', 'you know? who is Vladimir Putin', 'press Alt+F4', 'you know? who is Ash Kentchum', 'You eat Nugget everyday?', 'You like Digimon?', 'The first climber a Mount Everest is Edmund Hillary', 'Globemon', 'also try Doppio', 'Willo has more friends', 'Wow Yankee with no Brim', 'Rick Astley - Never Gonna Give You Up', 'No anime', 'We need to build a wall', 'Do you know Da Wae', "<a:dj_blob:723714370462416966> Gatchmon Biodata <a:dj_blob:723714370462416966> <a:dj_blob:723714370462416966> Gatchmon Biodata <a:dj_blob:723714370462416966> <a:dj_blob:723714370462416966> Gatchmon Biodata <a:dj_blob:723714370462416966>", 'Everybody Gangsta First time Todoroki Shouto ツ#6379 got token leak', "this bot has 100% no NSFW"]))
-		    ,
-		    colour=0xf0455a)
-    embed.add_field(
-		    name='Bot Biodata',
-		    value=
-		    'Library= discord.py\nBot Created:June 12 2020\nCreated by: ||<@479642404216111124> or someball45#2588||\nDefault Prefix: g!\nCommands: 42 cmds'
-		)
-    embed.add_field(
-		    name='Programer biodata',
-		    value=
-		    'Favorite game=Terraria,Minecraft,From The Depths, Pc Buidling Simulator\nFavorite Language:Python,HTML,Javascript\nName:Willoizcitron\nSocial Media:\n[Github](https://github.com/WilloIzCitron)\n[Repl.It](https://repl.it/@SomeBall45)\n[BFD](https://botsfordiscord.com/user/479642404216111124)'
-		)
-    embed.add_field(
-		    name='Versions',
-		    value='Discord.py = 1.3.3\nPython= 3.8.3\nBot Version = '+system.Version.version+'\nChangelog = '+system.Version.changelog+'')
-    embed.add_field(
-		    name='Links',
-		    value=
-		        '[Donate A Hacker Plan](https://repl.it/upgrade/SomeBall45)\n[Join Support Server](https://discord.gg/Y3YaFHF)')
-    embed.add_field(
-			name='APIs'
-			, value=
-			"Useless-api by VieroFernando, nekobot api by hibikidesu, shibe.online, randomfox.ca, random-d.uk")
-    embed.set_thumbnail(
-		    url=
-		    'https://cdn.discordapp.com/avatars/721025249050624112/04c346e44a48763420f2b87f1a27789a.png?size=1024'
-		)
+    embed = discord.Embed(title="<a:dj_blob:723714370462416966> Gatchmon Biodata <a:dj_blob:723714370462416966>", description=(random.choice(['this is fun fact?', 'also try username601', 'what is this?', 'also try Nezumi Yui', 'you know? who is Vladimir Putin', 'press Alt+F4', 'you know? who is Ash Kentchum', 'You eat Nugget everyday?', 'You like Digimon?', 'The first climber a Mount Everest is Edmund Hillary', 'Globemon', 'also try Doppio', 'Willo has more friends', 'Wow Yankee with no Brim', 'Rick Astley - Never Gonna Give You Up', 'No anime', 'We need to build a wall', 'Do you know Da Wae', "<a:dj_blob:723714370462416966> Gatchmon Biodata <a:dj_blob:723714370462416966> <a:dj_blob:723714370462416966> Gatchmon Biodata <a:dj_blob:723714370462416966> <a:dj_blob:723714370462416966> Gatchmon Biodata <a:dj_blob:723714370462416966>", 'Everybody Gangsta First time Todoroki Shouto ツ#6379 got token leak', "this bot has 100% no NSFW"])), colour=0xf0455a)
+    embed.add_field(name='Bot Biodata', value='Library= discord.py\nBot Created:June 12 2020\nCreated by: ||<@479642404216111124> or someball45#2588||\nDefault Prefix: g!\nCommands: 42 cmds')
+    embed.add_field(name='Programer biodata', value='Favorite game=Terraria,Minecraft,From The Depths, Pc Buidling Simulator\nFavorite Language:Python,HTML,Javascript\nName:Willoizcitron\nSocial Media:\n[Github](https://github.com/WilloIzCitron)\n[Repl.It](https://repl.it/@SomeBall45)\n[BFD](https://botsfordiscord.com/user/479642404216111124)')
+    embed.add_field(name='Versions', value='Discord.py = 1.3.3\nPython= 3.8.3\nBot Version = '+system.Version.version+'\nChangelog = '+system.Version.changelog+'')
+    embed.add_field(name='Links', value='[Donate A Hacker Plan](https://repl.it/upgrade/SomeBall45)\n[Join Support Server](https://discord.gg/Y3YaFHF)')
+    embed.add_field(name='APIs', value="Useless-api by VieroFernando, nekobot api by hibikidesu, shibe.online, randomfox.ca, random-d.uk")
+    embed.set_thumbnail(url='https://cdn.discordapp.com/avatars/721025249050624112/04c346e44a48763420f2b87f1a27789a.png?size=1024')
     embed.set_footer(text='Copyright (c) 2020 WilloIzCitron')
     await ctx.send(embed=embed)
     
