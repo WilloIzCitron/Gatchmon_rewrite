@@ -35,7 +35,7 @@ async def ping(ctx):
 @bot.command()
 @commands.cooldown(1, 12, commands.BucketType.user)
 async def serverinfo(ctx):
-    server = message.guild
+    server = ctx.guild
     roles = len(server.roles)
     channel_count = len([x for x in server.channels if type(x) == discord.channel.TextChannel])
     embed = discord.Embed(title='Guild info of '+server.name, color=server.owner.color)
