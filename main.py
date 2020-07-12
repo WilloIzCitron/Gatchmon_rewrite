@@ -1,4 +1,5 @@
 import discord
+import random
 import os
 from os import environ as fetchsecret
 import Core as system
@@ -28,7 +29,7 @@ async def say(ctx, arg):
 @bot.command()
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def ping(ctx):
-    embed = discord.Embed(title='Pong!', description="Client latency is "+str(round(client.latency * 1000))+"ms", color=0xf0455a)
+    embed = discord.Embed(title='Pong!', description="Client latency is "+str(round(bot.latency * 1000))+"ms", color=0xf0455a)
     embed.set_footer(text='by '+str(ctx.author))
     await ctx.send(embed=embed)
   
