@@ -33,6 +33,21 @@ async def ping(ctx):
     await ctx.send(embed=embed)
   
 @bot.command()
+@commands.cooldown(1, 12, commands.Buckettype.user)
+async def serverinfo(ctx):
+    server = message.guild
+    roles = len(server.roles)
+    channel_count = len([x for x in server.channels if type(x) == discord.channel.TextChannel])
+    embed = discord.Embed(title='Guild info of '+server.name, color=server.owner.color)
+    embed.set_thumbnail(url=server.icon_url)
+    embed.set_image(url=server.banner_url)
+    embed.add_field(name='General info', value='Owner= '+str(server.owner)+'\nMembers= '+str(server.member_count)+'\nChannels= '+str(channel_count)+'\nServerID= '+str(server.id)+'\nRegion= '+str(server.region)+'\nCreated at= '+server.created_at.__format__('%A, %d. %B %Y @ %H:%M:%S')+'\nRole count= '+str(roles)+'\nBoost tier= '+str(server.premium_tier)+'\nMember has boost= '+str(server.premium_subscription_count)+' Boosts', inline=True)
+    embed.add_field(name='Moderation', value='Verificaton levels= '+str(server.verification_level)+'\n 2FA level= '+str(server.mfa_level)+'\nExplicit content filter= '+str(server.explicit_content_filter), inline=True)
+    embed.add_field(name="AFK", value='AFK Channel= '+str(server.afk_channel)+'\nAFK timeout= '+str(server.afk_timeout), inline=True)
+    embed.add_field(name='Limits', value='Emoji limit= '+str(server.emoji_limit)+'\nBitrate limit='+str(server.bitrate_limit)+'Bps''\nFilesize limit= '+str(server.filesize_limit)+'B', inline=True)
+    await ctx.send(embed=embed)
+
+@bot.command()
 @commands.cooldown(1, 5, commands.BucketType.user)
 async def about(ctx):
     embed = discord.Embed(title="<a:dj_blob:723714370462416966> Gatchmon Biodata <a:dj_blob:723714370462416966>", description=(random.choice(['this is fun fact?', 'also try username601', 'what is this?', 'also try Nezumi Yui', 'you know? who is Vladimir Putin', 'press Alt+F4', 'you know? who is Ash Kentchum', 'You eat Nugget everyday?', 'You like Digimon?', 'The first climber a Mount Everest is Edmund Hillary', 'Globemon', 'also try Doppio', 'Willo has more friends', 'Wow Yankee with no Brim', 'Rick Astley - Never Gonna Give You Up', 'No anime', 'We need to build a wall', 'Do you know Da Wae', "<a:dj_blob:723714370462416966> Gatchmon Biodata <a:dj_blob:723714370462416966> <a:dj_blob:723714370462416966> Gatchmon Biodata <a:dj_blob:723714370462416966> <a:dj_blob:723714370462416966> Gatchmon Biodata <a:dj_blob:723714370462416966>", 'Everybody Gangsta First time Todoroki Shouto ツ#6379 got token leak', "this bot has 100% no NSFW"])), colour=0xf0455a)
