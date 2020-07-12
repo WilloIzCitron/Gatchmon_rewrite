@@ -33,7 +33,7 @@ async def ping(ctx):
     await ctx.send(embed=embed)
   
 @bot.command()
-@commands.cooldown(1, 12, commands.Buckettype.user)
+@commands.cooldown(1, 12, commands.BucketType.user)
 async def serverinfo(ctx):
     server = message.guild
     roles = len(server.roles)
